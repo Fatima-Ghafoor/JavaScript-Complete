@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> JavaScript </title>
+</head>
+<body>
+    <p id="output"></p>
+</body>
+</html>
+<!-- LINKING JAVASCRIPT WITH HTML -->
+<!-- 1) Internal JavaScript -->
+<script>
+    document.write("This is Internal JavaScript");
+</script>
+
+<!-- 2) External JavaScript -->
+<script src="script.js">
+    /* Put any file under the name script.js in the same folder and the code will appear at this place on chrome */
+</script>
+
+<!-- 3) Inline JavaScript -->
+<button onclick="document.write('This is Inline JavaScript')"> Click Me </button>
+
+<!-- WRITING OUTPUT -->
+<!-- 1) console.log() -->
+<script>
+    console.log("Hello from console.log()");
+</script>
+
+<!-- 2) document.write() -->
+<script>
+    document.write("Hello from document.write()");
+</script>
+
+<!-- 3) innerHTML -->
+<script>
+    document.getElementById("output").innerHTML = "Hello from innerHTML";
+</script>
