@@ -9,3 +9,9 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Linking JavaScript with HTML (`<script>` tag).
 - Internal, External, and Inline JS.
 - Writing output: `console.log()`, `document.write()`, `innerHTML`.
+
+**2. VARIABLES:**
+- Declaration using `var`, `let`, `const`.
+- Variable initialization and re-assignment.
+- Difference between `var`, `let`, and `const`.
+- Variable naming rules and conventions.
