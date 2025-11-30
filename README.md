@@ -21,3 +21,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Non-Primitive: `Object`, `Array`, `Function`.
 - Type checking using `typeof`.
 - Type conversion: Implicit & Explicit.
+
+**4. OPERATORS:**
+- Arithmetic Operators: (`+`, `-`, `*`, `/`, `%`, `**`).
+- Assignment Operators: (`=`, `+=`, `-=`).
+- Comparison Operators: (`==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=`).
+- Logical Operators: (`&&`, `||`, `!`).
+- Ternary Operator: (`condition ? true : false`).
+- Unary Operators: Increment & Decrement Operators (`++`, `--`).
