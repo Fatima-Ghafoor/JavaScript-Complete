@@ -15,3 +15,9 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Variable initialization and re-assignment.
 - Difference between `var`, `let`, and `const`.
 - Variable naming rules and conventions.
+
+**3. DATA TYPES:**
+- Primitive Types: `String`, `Number`, `Boolean`, `Null`, `Undefined`, `BigInt`, `Symbol`.
+- Non-Primitive: `Object`, `Array`, `Function`.
+- Type checking using `typeof`.
+- Type conversion: Implicit & Explicit.
