@@ -35,3 +35,7 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - `if...else if...else` statement.
 - `ifs` statement.
 - Nested `ifs` statement.
+
+**6. SWITCH CASE:**
+- Syntax and working of `switch`.
+- Difference between `if...else` and `switch`.
