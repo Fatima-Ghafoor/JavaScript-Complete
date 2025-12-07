@@ -39,3 +39,10 @@ All topics are organized step by step, without mixing concepts, for clear learni
 **6. SWITCH CASE:**
 - Syntax and working of `switch`.
 - Difference between `if...else` and `switch`.
+
+**7. LOOPS:**
+- `for` loop.
+- `while` loop.
+- `do...while` loop.
+- `for...of` loop.
+- `for...in` loop.
