@@ -46,3 +46,9 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - `do...while` loop.
 - `for...of` loop.
 - `for...in` loop.
+
+**8. BREAK & CONTINUE:**
+- Use of `break` in for loop.
+- Use of `continue` in for loop.
+- When and when not to use `break`.
+- When and when not to use `continue`.
