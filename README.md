@@ -52,3 +52,17 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Use of `continue` in for loop.
 - When and when not to use `break`.
 - When and when not to use `continue`.
+
+**9. FUNCTIONS:**
+- Function `declaration` and `execution`.
+- Purpose of function declaration and execution.
+- `Parameters` and `Arguments`.
+- `Return` statement.
+- Difference between `return` statement and `console.log()`.
+- Function `expressions`.
+- Need of function expressions (theory).
+- `Arrow` functions (`=>`).
+- `Default` parameters.
+- `Anonymous` functions and its need.
+- `IIFE functions` and its need.
+- Differences between regular and arrow functions.
