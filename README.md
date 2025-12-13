@@ -66,3 +66,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - `Anonymous` functions and its need.
 - `IIFE functions` and its need.
 - Differences between regular and arrow functions.
+
+**10. GLOBAL & LOCAL VARIABLES:**
+- `Global` scope and `Local` scope.
+- `Function` scope and `Block` scope.
+- Scope chain.
+- Shadowing of variables.
+- `var`, `let`, and `const` scope behavior.
+- Hoisting (for variables and functions).
