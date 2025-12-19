@@ -74,3 +74,13 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Shadowing of variables.
 - `var`, `let`, and `const` scope behavior.
 - Hoisting (for variables and functions).
+
+**11. STRING METHODS:**
+- Strings & indexing.
+- Escape characters.
+- Template literals.
+- Access & Extraction: `charAt()`, `charCodeAt()`, `codePointAt()`, `length`.
+- Searching: `includes()`, `indexOf()`, `lastIndexOf()`, `startsWith()`, `endsWith()`, `search()`, `match()`, `matchAll()`, `localeCompare()`.
+- Extracting Substrings: `slice()`, `substring()`, `substr()`, `split()`, `concat()`.
+- Modifying & Formatting: `toUpperCase()`, `toLowerCase()`, `trim()`, `trimStart()`, `trimLeft()`, `trimEnd()`, `trimRight()`, `replace()`, `replaceAll()`, `normalize()`, `padStart()`, `padEnd()`, `repeat()`.
+- Template & Encoding: `toString()`, `valueOf()`, `toLocaleUpperCase()`, `toLocaleLowerCase()`, `escape()`, `unescape()`, `encodeURI()`, `encodeURIComponent()`, `decodeURI()`, `decodeURIComponent()`.
