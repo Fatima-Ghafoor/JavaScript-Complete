@@ -84,3 +84,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Extracting Substrings: `slice()`, `substring()`, `substr()`, `split()`, `concat()`.
 - Modifying & Formatting: `toUpperCase()`, `toLowerCase()`, `trim()`, `trimStart()`, `trimLeft()`, `trimEnd()`, `trimRight()`, `replace()`, `replaceAll()`, `normalize()`, `padStart()`, `padEnd()`, `repeat()`.
 - Template & Encoding: `toString()`, `valueOf()`, `toLocaleUpperCase()`, `toLocaleLowerCase()`, `escape()`, `unescape()`, `encodeURI()`, `encodeURIComponent()`, `decodeURI()`, `decodeURIComponent()`.
+
+**12. DATE & TIME METHODS:**
+- Creating dates: `newDate()`.
+- Get methods: `getFullYear()`, `getMonth()`, `getDate()`, `getHours()`, `getMinutes()`, `getSeconds()`, `getDay()`, `getTime()`.
+- Set methods: `setFullYear()`, `setMonth()`, `setDate()`, `setHours()`, `setMinutes()`.
+- Formatting(): `toLocaleString()`, `toDateString()`, `toTimeString()`.
+- Timestamps.
+- Comparing dates.
