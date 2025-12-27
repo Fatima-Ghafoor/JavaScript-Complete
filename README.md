@@ -92,3 +92,10 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Formatting(): `toLocaleString()`, `toDateString()`, `toTimeString()`.
 - Timestamps.
 - Comparing dates.
+
+**13. ARRAYS:**
+- Creating Arrays.
+- Indexing.
+- Updating values.
+- Array methods: `push()`, `pop()`, `shift()`, `unshift()`, `indexOf()`, `includes()`, `slice()`, `splice()`, `join()`, `sort()`, `reverse()`.
+- Loops with arrays: `for`, `for...of`, `forEach()`.
