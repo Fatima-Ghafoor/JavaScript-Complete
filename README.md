@@ -99,3 +99,13 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Updating values.
 - Array methods: `push()`, `pop()`, `shift()`, `unshift()`, `indexOf()`, `includes()`, `slice()`, `splice()`, `join()`, `sort()`, `reverse()`.
 - Loops with arrays: `for`, `for...of`, `forEach()`.
+
+**14. OBJECTS:**
+- Creating Objects.
+- Accessing Properties (methods: dot, bracket).
+- Adding & Removing Properties.
+- Object Methods.
+- `this` keyword.
+- Nested Objects.
+- Object Cloning (methods: `Object.assign`, spread).
+- Object Comparison.
