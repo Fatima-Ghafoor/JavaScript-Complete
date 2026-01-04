@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Dialog Boxes </title>
+</head>
+<body></body>
+</html>
+
+<!-- ALERT -->
+<!-- The 'alert()' methods displays a simple message box with an OK button to inform the user about something important. It does not return any value and pauses the execution of JavaScript until the user clicks OK. It is commonly used for notifications, warnings, or quick messages during debugging. Since it blocks the page, it should be used sparingly in real applications. -->
+
+<script>
+    alert("Your form has been submitted successfully!");
+</script>
+
+<!-- CONFIRM -->
+<!-- The 'confirm()' methods displays a dialog box with OK and Cancel buttons to get confirmation from the user. It returns a boolean value: 'true' if OK is clicked and 'false' if Cancel is clicked. JavaScript execution is paused until the user responds. It is typically used before performing critical actions like deleting data or logging out. -->
+
+<script>
+    let userChoice = confirm("Do you want to continue?");
+    if(userChoice){
+        document.write("User clicked ok!");
+    }
+    else{
+        document.write("User clicked cancel!");
+    }
+</script>
+
+<!-- PROMPT -->
+<!-- The 'prompt()' methods displays a dialog box that asks the user for input using a text field. It returns the entered value as a string, or null if the user clicks Cancel. Code execution stops until input is provided. It is useful for taking quick input but is rarely used in production applications due to poor user experience. -->
+
+<script>
+    let userName = prompt("Enter Your Name: ");
+    if(userName != null){
+        document.write("Hello ", userName);
+    }
+    else{
+        document.write("User cancelled the prompt!");
+    }
+</script>
+
+<!-- DIFFERENCE BETWEEN THESE THREE -->
+
+<!-- Purpose -->
+<!-- alert(): is used to display information or warnings. -->
+<!-- confirm(): is used to get user confirmation before an action. -->
+<!-- prompt(): is used to collect input from the user. -->
+
+<!-- Buttons -->
+<!-- alert(): shows only an OK button. -->
+<!-- confirm(): shows OK and Cancel buttons. -->
+<!-- prompt(): shows OK and Cancel buttons with an input field. -->
+
+<!-- Return Value -->
+<!-- alert(): returns nothing (undefined). -->
+<!-- confirm(): returns a boolean (true or false). -->
+<!-- prompt(): returns a string or null. -->
+
+<!-- User Interaction -->
+<!-- alert(): does not require input, only acknowledgment. -->
+<!-- confirm(): requires a decision. -->
+<!-- prompt(): requires text input. -->
+
+<!-- Use Case -->
+<!-- alert(): Notifications, Warnings. -->
+<!-- confirm(): Delete, logout, or submit confirmation. -->
+<!-- prompt(): Quick input (namme, age, etc). -->
