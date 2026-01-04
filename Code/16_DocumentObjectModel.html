@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Document Object Model </title>
+    <style>
+        .box{
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #333;
+        }
+        .active{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- DOM SELECTION -->
+    <h1 id="main-heading"> DOM Practice </h1>
+
+    <p id="description"> Learning JavaScript DOM </p>
+    <p id="description"> Practice makes perfect </p>
+
+    <div class="box"> Box 1 </div>
+    <div class="box"> Box 2 </div>
+
+    <ul>
+        <li class="item"> Item 1 </li>
+        <li class="item"> Item 2 </li>
+        <li class="item"> Item 3 </li>
+    </ul>
+
+    <!-- DOM MANIPULATION -->
+    <h2 id="manipulation"> DOM Manipulation </h2>
+
+    <p id="text-change"> Original Text </p>
+
+    <button id="style-btn"> Change Style </button>
+    <button id="class-btn"> Toggle Class </button>
+
+    <!-- DOM ELEMENT CONTROL -->
+    <h2> DOM Element Control </h2>
+
+    <div id="container">
+        <p> Existing Element </p>
+    </div>
+
+    <button id="add"> Add Element </button>
+    <button id="remove"> Remove Element </button>
+
+    <!-- DOM TRAVERSING -->
+    <h2> DOM Traversing </h2>
+
+    <div id="parent">
+        <p> First Child </p>
+        <p id="current"> Current Element </p>
+        <p> Last Child </p>
+    </div>
+    
+</body>
+</html>
+
+<!-- DOM SELECTION -->
+
+<!-- 1) getElementById(): Selects one unique element using its 'id'. -->
+<script>
+    const mainHeading = document.getElementById("main-heading");
+    console.log(mainHeading.innerText); // Shows the visible text of the selected element
+</script>
+
+<!-- 2) getElementsByClassName(): Selects all elements with the same class name. -->
+<script>
+    const descriptions = document.getElementsByClassName("description");
+    console.log(descriptions[0].innerText); // Shows the visible text of the first matched element
+</script>
+
+<!-- 3) getElementsByTagName(): Selects elements by their HTML tag name. -->
+<script>
+    const allDivs = document.getElementsByTagName("div");
+    console.log(allDivs.length);    // Shows the total number of matched elements
+</script>
+
+<!-- 4) querySelector(): Selects the first matching element using CSS selectors. -->
+<script>
+    const firstBox = document.querySelector(".box");
+    console.log(firstBox.innerText);    // Shows the visible text of the first matching element
+</script>
+
+<!-- 5) querySelectorAll(): Selects all matching elements using CSS selectors. -->
+<script>
+    const items = document.querySelectorAll(".item");
+    items.forEach(item => {
+        console.log(item.innerText);    // Shows the visible text of each matched element
+    });
+</script>
+
+<!-- DOM MANIPULATION -->
+
+<!-- 1) textContent: Gets or sets all text content, including hidden text. -->
+<script>
+    const textChange = document.getElementById('text-change');
+    textChange.textContent = 'Changed textContent';
+    document.write('textContent: ' + textchange.textContent + '<br>');
+</script>
+
+<!-- 2) innerHTML: Gets or sets HTML markup along with text inside an element. -->
+<script>
+    textChange.innerHTML = '<strong> Bold using innerHTML </strong>';
+    document.write('innerHTML: ' + textChange.innerHTML + '<br>');
+</script>
+
+<!-- 3) outerHTML: Gets or replaces the entire element including its HTML tag. -->
+<script>
+    const manipulationHeading = document.getElementById('manipulation');
+    manipulationHeading.outerHTML = '<h2 id="manipulation"> Replaced using outerHTML </h2>';
+    document.write('outerHTML replaced <br>');
+</script>
+
+<!-- 4) innerText: Gets or sets only the visible text inside an element. -->
+<script>
+    textChange.innerText = 'Visible text using innerText';
+    document.write('innerText: ' + textChange.innerText + '<br>');
+</script>
+
+<!-- 5) outerText: Replaces an element with plain text only (rarely used). -->
+<script>
+    document.write('outerText demo (rarely used) <br>');
+</script>
+
+<!-- 6) value: Gets or sets the value of form elements like input, textarea and select. -->
+<script>
+    const styleBtn = document.getElementById('style-btn');
+    styleBtn.value = 'New Button Value';    // Works if input element
+    document.write('value: ' + styleBtn.value + '<br>');
+</script>
+
+<!-- 7) style.property: Reads or changes the inline CSS property of an element. -->
+<script>
+    textChange.style.color = 'red';
+    document.write('style.property: color red <br>');
+</script>
+
+<!-- 8) style.cssText: Set multiple styles at once. -->
+<script>
+    textChange.style.cssText = 'background-color: lightblue; font-weight: bold;';
+    document.write('style.cssText applied <br>');
+</script>
+
+<!-- 9) classList.add(): Adds a CSS class to an element. -->
+<script>
+    textChange.classList.add('highlight');
+    document.write('classList.add(): highlight added <br>');
+</script>
+
+<!-- 10) classList.remove(): Removes a CSS class from an element. -->
+<script>
+    textChange.classList.remove('highlight');
+    document.write('classList.remove(): highlight removed <br>');
+</script>
+
+<!-- 11) classList.toggle(): Adds the class if not present, removes it if already present. -->
+<script>
+    textChange.classList.toggle('active');
+    document.write('classList.toggle(): active toggled <br>');
+</script>
+
+<!-- 12) classList.replace(): Replace one class with another. -->
+<script>
+    textChange.classList.replace('active', 'highlight');
+    document.write('classList.replace(): active replaced with highlight <br>');
+</script>
+
+<!-- 13) getAttribute(): Reads the value of a specified HTML attribute. -->
+<script>
+    const headingAttr = manipulationHeading.getAttribute('id');
+    document.write('getAttribute(): id = ' + headingAttr + '<br>');
+</script>
+
+<!-- 14) setAttribute(): Sets or updates the value of a specified HTML attribute. -->
+<script>
+    textChange.setAttribute('title', 'Text Changed');
+    document.write('setAttribute(): title set <br>');
+</script>
+
+<!-- 15) hasAttribute(): Checks if an element has a specific attribute. -->
+<script>
+    const hasTitle = textChange.hasAttribute('title');
+    document.write('hasAttribute(): title exists = ' + hasTitle + '<br>');
+</script>
+
+<!-- 16) removeAttribute(): Removes a specified attribute. -->
+<script>
+    textChange.removeAttribute('title');
+    document.write('removeAttribute(): title removed <br>');
+</script>
+
+<!-- Rule of Thumb: Use content properties for text/HTML, value for forms, and attributes methods for HTML attributes. -->
+
+<!-- DOM ELEMENT CONTROL -->
+
+<!-- 1) createElement(): Creates a new element. -->
+<script>
+    const newPara = document.createElement('p');
+    newPara.innerText = 'This paragraph is created using createElement()';
+    document.write('createElement(): paragraph created <br>');
+</script>
+
+<!-- 2) append(): Adds a new element at the end of a parent. -->
+<script>
+    const container = document.getElementById('container');
+    container.append(newPara);
+    document.write('append(): paragraph added at the end <br>');
+</script>
+
+<!-- 3) prepend(): Adds a new element at the beginning of a parent. -->
+<script>
+    const newStrong = document.createElement('strong');
+    newStrong.innerText = 'Prepended Strong Text - ';
+    container.prepend(newStrong);
+    document.write('prepend(): strong text added at the beginning <br>');
+</script>
+
+<!-- 4) remove(): Removes an element from the DOM. -->
+<script>
+    newPara.remove();
+    document.write('remove(): paragraph removed <br>');
+</script>
+
+<!-- DOM TRAVERSING -->
+
+<!-- 1) parentElement: Accesses the parent of an element. -->
+<script>
+    const current = document.getElementById('current');
+    const parent = current.parentElement;
+    document.write('parentElement: ' + parent.id + '<br>');
+</script>
+
+<!-- 2) children: Accesses all direct child elements of a parent. -->
+<script>
+    const children = parent.children;
+    document.write('children: ' + children.length + ' children <br>');
+</script>
+
+<!-- 3) nextElementSibling: Accesses the next sibling element. -->
+<script>
+    const nextSibling = current.nextElementSibling;
+    document.write('nextElementSibling: ' + nextSibling.innerText + '<br>');
+</script>
+
+<!-- 4) previousElementSibling: Accesses the previous sibling element. -->
+<script>
+    const prevSibling = current.previousElementSibling;
+    document.write('previousElementSibling: ' + prevSibling.innerText + '<br>');
+</script>
