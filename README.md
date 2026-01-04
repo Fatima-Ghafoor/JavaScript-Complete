@@ -115,3 +115,9 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - `confirm()` - confirmation dialog.
 - `prompt()` - user input dialog.
 - Difference between these three.
+
+**16. DOCUMENT OBJECT MODEL (DOM):**
+- DOM Selection: `getElementById()`, `getElementsByClassName()`, `getElementsByTagName()`, `querySelector()`, `querySelectorAll()`.
+- DOM Manipulation: `textContent`, `innerHTML`, `outerHTML`, `innerText`, `outerText`, `value`, `style.property`, `style.cssText`, `classList.add()`, `classList.remove()`, `classList.toggle()`, `classList.replace()`, `getAttribute()`, `setAttribute()`, `hasAttribute()`, `removeAttribute()`.
+- DOM Element Control: `createElement()`, `append()`, `prepend()`, `remove()`.
+- DOM Traversing: `parentElement`, `children`, `nextElementSibling`, `previousElementSibling`.
