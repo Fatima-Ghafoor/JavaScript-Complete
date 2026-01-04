@@ -109,3 +109,9 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Nested Objects.
 - Object Cloning (methods: `Object.assign`, spread).
 - Object Comparison.
+
+**15. DIALOG BOXES:**
+- `alert()` - message display.
+- `confirm()` - confirmation dialog.
+- `prompt()` - user input dialog.
+- Difference between these three.
