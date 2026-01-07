@@ -121,3 +121,19 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - DOM Manipulation: `textContent`, `innerHTML`, `outerHTML`, `innerText`, `outerText`, `value`, `style.property`, `style.cssText`, `classList.add()`, `classList.remove()`, `classList.toggle()`, `classList.replace()`, `getAttribute()`, `setAttribute()`, `hasAttribute()`, `removeAttribute()`.
 - DOM Element Control: `createElement()`, `append()`, `prepend()`, `remove()`.
 - DOM Traversing: `parentElement`, `children`, `nextElementSibling`, `previousElementSibling`.
+
+**17. EVENTS:**
+- What are Events in JavaScript?
+- Mouse Events: `click`, `dblclick`, `mousedown`, `mouseup`, `mousemove`, `mouseenter`, `mouseleave`, `mouseover`, `mouseout`, `contextmenu`, `wheel`.
+- Keyboard Events: `keydown`, `keyup`, `keypress`.
+- Form/Input Events: `change`, `input`, `focus`, `blur`, `submit`, `reset`, `invalid`, `select`.
+- Window/Browser Events: `load`, `DOMContentLoaded`, `resize`, `scroll`, `beforeunload`, `unload`, `hashchange`, `online`, `offline`, `error`.
+- Clipboard Events: `copy`, `cut`, `paste`.
+- Drag & Drop Events: `dragstart`, `drag`, `dragend`, `dragenter`, `dragleave`, `dragover`, `drop`.
+- Touch Events (Mobile): `touchstart`, `touchmove`, `touchend`, `touchcancel`.
+- Media Events: `play`, `pause`, `ended`, `timeupdate`, `volumechange`, `loadeddata`, `loadedmetadata`.
+- Animation Events: `animationstart`, `animationiteration`, `animationend`.
+- Transition Events: `transitionstart`, `transitionrun`, `transitionend`, `transitioncancel`.
+- Pointer Events: `pointerdown`, `pointerup`, `pointermove`.
+- Event Objects and Event Properties.
+- Event Flow: Capturing Phase, Target Phase, Bubbling Phase & Event Delegation.
