@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Events </title>
+    <style>
+        body{ font-family: Arial, sans-serif; padding: 20px; }
+        #dragZone { background-color: lightgreen; }
+        .box{ width: 150px; height: 100px; background-color: lightblue; margin: 10px; display: inline-block; text-align: center; line-height: 100px; cursor: pointer; }
+        .container { margin-bottom: 20px; }
+        input, textarea, select, button { margin: 5px 0; display: block; }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        #animateBox:hover {
+            animation: pulse 1s infinite;
+        }
+        #transitionBox {
+            transition: all 0.5s;
+            background-color: hotpink;
+            cursor: pointer;
+        }
+        #transitionBox:hover {
+            background-color: coral;
+            transform: scale(1.2);
+        }
+        #parentDiv{
+            padding: 20px; border: 2px solid blue;
+        }
+        #childDiv{
+            padding: 20px; border: 2px solid green; margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- MOUSE EVENTS -->
+    <div class="container">
+        <h2> Mouse Events </h2>
+        <button id="clickBtn"> Click Me </button>
+        <div class="box" id="hoverBox"> Hover Me </div>
+    </div>
+
+    <!-- KEYBOARD EVENTS -->
+    <div class="container">
+        <h2> Keyboard Events </h2>
+        <input type="text" id="keyboardInput" placeholder="Type something...">
+    </div>
+
+    <!-- FORM/INPUT EVENTS -->
+    <div class="container">
+        <h2> Form/Input Events </h2>
+        <form id="demoForm">
+            <input type="text" id="nameInput" placeholder="Enter Your Name">
+            <textarea id="messageInput" placeholder="Message"></textarea>
+            <select id="selectInput">
+                <option value=""> Select </option>
+                <option value="option1"> Option 1 </option>
+                <option value="option2"> Option 2 </option>
+            </select>
+            <button type="submit"> Submit </button>
+            <button type="reset"> Reset </button>
+        </form>
+    </div>
+
+    <!-- WINDOW/BROWSER EVENTS -->
+    <div class="container">
+        <h2> Window/Browser Events </h2>
+        <p> Resize, Scroll, Load, Online/Offline events will be logged in console. </p>
+    </div>
+
+    <!-- CLIPBOARD EVENTS -->
+    <div class="container">
+        <h2> Clipboard Events </h2>
+        <textarea id="clipboardInput" placeholder="Try copy/cut/paste here"></textarea>
+    </div>
+
+    <!-- DRAG & DROP EVENTS -->
+    <div class="container">
+        <h2> Drag & Drop Events </h2>
+        <div id="dragBox" class="box" draggable="true"> Drag Me </div>
+        <div id="dragZone" class="box"> Drop Here </div>
+    </div>
+
+    <!-- TOUCH EVENTS (For Mobile) -->
+    <div class="container">
+        <h2> Touch Events </h2>
+        <div class="box" id="touchBox"> Touch Me </div>
+    </div>
+
+    <!-- MEDIA EVENTS -->
+    <div class="container">
+        <h2> Media Events </h2>
+        <video id="demoVideo">
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    </div>
+
+    <!-- ANIMATION EVENTS -->
+    <div class="container">
+        <h2> Animation & Transition Events </h2>
+        <div class="box" id="animateBox"> Animation Box </div>
+    </div>
+
+    <!-- TRANSITION EVENTS -->
+    <div class="container">
+        <h2> Transition Events </h2>
+        <div class="box" id="transitionBox"> Hover Me for Transition </div>
+    </div>
+
+    <!-- POINTER EVENTS -->
+    <div class="container">
+        <h2> Pointer Events </h2>
+        <div class="box" id="pointerBox"> Pointer Me </div>
+    </div>
+
+    <!-- EVENT FLOW -->
+    <div id="parentDiv">
+        parentDiv
+        <div id="childDiv">
+            childDiv
+            <button id="childBtn"> Click Me </button>
+        </div>
+    </div>
+
+    <!-- EVENT LOGS -->
+    <div class="container">
+        <h2> Event Logs </h2>
+        <pre id="log"></pre>
+    </div>
+
+</body>
+</html>
+
+<!-- MOUSE EVENTS -->
+
+<!-- 1) click: Triggered when the mouse is pressed and released on an element. -->
+<script>
+    clickBtn.addEventListener("click", () => {
+        console.log("click: Button clicked!");
+    });
+</script>
+
+<!-- 2) dblclick: Triggered when an element is double-clicked. -->
+<script>
+    clickBtn.addEventListener("dblclick", () => {
+        console.log("dblclick: Button double clicked!");
+    });
+</script>
+
+<!-- 3) mousedown: Triggered when a mouse button is pressed down. -->
+<script>
+    clickBtn.addEventListener("mousedown", () => {
+        console.log("mousedown: Mouse button pressed!");
+    });
+</script>
+
+<!-- 4) mouseup: Triggered when the mouse button is released. -->
+<script>
+    clickBtn.addEventListener("mouseup", () => {
+        console.log("mouseup: Mouse button released!");
+    });
+</script>
+
+<!-- 5) mousemove: Triggered whenever the mouse moves over an element. -->
+<script>
+    hoverBox.addEventListener("mousemove", () => {
+        console.log("mousemove: Mouse moving over box!");
+    });
+</script>
+
+<!-- 6) mouseenter: Triggered when the mouse enters the element (does not bubble). -->
+<script>
+    hoverBox.addEventListener("mouseenter", () => {
+        console.log("mouseenter: Mouse entered box!");
+    });
+</script>
+
+<!-- 7) mouseleave: Triggered when the mouse leaves the element (does not bubble). -->
+<script>
+    hoverBox.addEventListener("mouseleave", () => {
+        console.log("mouseleave: Mouse left box!");
+    });
+</script>
+
+<!-- 8) mouseover: Triggered when the mouse enters the element or its child elements (bubbles). -->
+<script>
+    hoverBox.addEventListener("mouseover", () => {
+        console.log("mouseover: Mouse over box!");
+    });
+</script>
+
+<!-- 9) mouseout: Triggered when the mouse leaves the element or its child elements (bubbles). -->
+<script>
+    hoverBox.addEventListener("mouseout", () => {
+        console.log("mouseout: Mouse out of box!");
+    });
+</script>
+
+<!-- 10) contextmenu: Triggered when the user right-clicks an element. -->
+<script>
+    hoverBox.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        console.log("contextmenu: Right click detected!");
+    });
+</script>
+
+<!-- 11) wheel: Triggered when the mouse wheel is scrolled. -->
+<script>
+    hoverBox.addEventListener("wheel", (e) => {
+        console.log("Mouse wheel scrolled!", e.deltaY);
+    });
+</script>
+
+<!-- KEYBOARD EVENTS -->
+
+<!-- 1) keydown: Triggered when a key is pressed down. Repeats if the key is held. -->
+<script>
+    keyboardInput.addEventListener("keydown", (e) => {
+        console.log(`Key down: ${e.key}`);
+    });
+</script>
+
+<!-- 2) keyup: Triggered when a key is released.  -->
+<script>
+    keyboardInput.addEventListener("keyup", (e) => {
+        console.log(`Key up: ${e.key}`);
+    });
+</script>
+
+<!-- 3) keypress: Triggered while a key that produces a character is pressed. -->
+<!-- Does not detect non-character keys (Shift, Ctrl, etc). Deprecated in modern browsers. -->
+<script>
+    keyboardInput.addEventListener("keypress", (e) => {
+        console.log(`Key pressed: ${e.key}`);
+    });
+</script>
+
+<!-- FORM/INPUT EVENTS -->
+
+<!-- 1) change: Triggered when the value of an input, textarea, or select changes and loses focus. -->
+<script>
+    nameInput.addEventListener("change", () => {
+        console.log("change; Name changed to: ", nameInput.value);
+    });
+</script>
+
+<!-- 2) input: Triggered immediately as the user types or selects. -->
+<script>
+    messageInput.addEventListener("input", () => {
+        console.log("input; Message input: ", messageInput.value);
+    });
+</script>
+
+<!-- 3) focus: Triggered when an input gains focus (clicked or tabbed into). -->
+<script>
+    nameInput.addEventListener("focus", () => {
+        console.log("focus; Name input focused!");
+    });
+</script>
+
+<!-- 4) blur: Triggered when an input loses focus. -->
+<script>
+    nameInput.addEventListener("blur", () => {
+        console.log("blur; Name input lost focus!");
+    });
+</script>
+
+<!-- 5) submit: Triggered when a form is submitted. -->
+<script>
+    demoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("submit; Form submitted!");
+    });
+</script>
+
+<!-- 6) reset: Triggered when a form is reset. -->
+<script>
+    demoForm.addEventListener("reset", () => {
+        console.log("reset; Form reset!");
+    });
+</script>
+
+<!-- 7) invalid: Triggered when a form element fails validation. -->
+<script>
+    nameInput.addEventListener("invalid", () => {
+        console.log("invalid; Name input is valid!");
+    });
+</script>
+
+<!-- 8) select: Triggered when user selects text inside an input or textarea. -->
+<script>
+    messageInput.addEventListener("select", () => {
+        console.log("select; Text selected in message!");
+    });
+</script>
+
+<!-- WINDOW/BROWSER EVENTS -->
+
+<!-- 1) load: Triggered when the entire page (HTML, CSS, images, media) is fully loaded. -->
+<script>
+    window.addEventListener("load", () => {
+        console.log("load; Page fully loaded!");
+    });
+</script>
+
+<!-- 2) DOM Content Loaded: Triggered when HTML is fully parsed. -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOMContentLoaded: DOM fully loaded!");
+    });
+</script>
+
+<!-- 3) resize: Triggered when the browser window is resized. -->
+<script>
+    window.addEventListener("resize", () => {
+        console.log("Window resized!");
+    });
+</script>
+
+<!-- 4) scroll: Triggered when the page is scrolled. -->
+<script>
+    window.addEventListener("scroll", () => {
+        console.log("scroll; Page scrolling!");
+    });
+</script>
+
+<!-- 5) beforeunload: Triggered before the user leaves the page. -->
+<script>
+    window.addEventListener("beforeunload", (e) => {
+        e.preventDefault();
+        e.returnValue = "";
+    });
+</script>
+
+<!-- 6) unload: Triggered when the page is unloading. -->
+<script>
+    window.addEventListener("unload", () => {
+        console.log("unload; Page unloaded!");
+    });
+</script>
+
+<!-- 7) hashchange: Triggered when the URL hash (#) changes. -->
+<script>
+    window.addEventListener("hashchange", () => {
+        console.log("hashchange; Hash changed: ", location.hash);
+    });
+</script>
+
+<!-- 8) online: Triggered when the browser regains the internet connection. -->
+<script>
+    window.addEventListener("online", () => {
+        console.log("online; You are online!");
+    });
+</script>
+
+<!-- 9) offline: Triggered when the browser loses internet connection. -->
+<script>
+    window.addEventListener("offline", () => {
+        console.log("offline; You are offline!");
+    });
+</script>
+
+<!-- 10) error: Triggered when a JavaScript or resource error occurs. -->
+<script>
+    window.addEventListener("error", (e) => {
+        console.log("error; Error occured: ", e.message);
+    });
+</script>
+
+<!-- CLIPBOARD EVENTS -->
+
+<!-- 1) copy: Triggered when the user copies selected content. -->
+<script>
+    clipboardInput.addEventListener("copy", () => {
+        console.log("copy; Content copied!");
+    });
+</script>
+
+<!-- 2) cut: Triggered when the user cuts selected content (copy + remove). -->
+<script>
+    clipboardInput.addEventListener("cut", () => {
+        console.log("cut; Content cut!");
+    });
+</script>
+
+<!-- 3) paste: Triggered when the user pastes content from the clipboard. -->
+<script>
+    clipboardInput.addEventListener("paste", () => {
+        console.log("paste; Content paste!");
+    });
+</script>
+
+<!-- DRAG & DROP EVENTS -->
+
+<!-- 1) dragstart: Triggered when the user starts dragging an element. -->
+<script>
+    dragBox.addEventListener("dragstart", () => {
+        console.log("dragstart; Dragging started!");
+    });
+</script>
+
+<!-- 2) drag: Triggered continuously while dragging the element. -->
+<script>
+    dragBox.addEventListener("drag", () => {
+        console.log("drag; Dragging...");
+    });
+</script>
+
+<!-- 3) dragend: Triggered when the drag operation ends. -->
+<script>
+    dragbox.addEventListener("dragend", () => {
+        console.log("dragend; Dragging ended!");
+    });
+</script>
+
+<!-- 4) dragenter: Triggered when a draggable element enters a drop target. -->
+<script>
+    dragZone.addEventListener("dragenter", () => {
+        console.log("dragenter; Entered drop zone!");
+    });
+</script>
+
+<!-- 5) dragleave: Triggered when a draggable element leaves  a drop target. -->
+<script>
+    dragZone.addEventListener("dragleave", () => {
+        console.log("dragleave; Left drop zone!");
+    });
+</script>
+
+<!-- 6) dragover: Triggered when a draggable element is over a drop target. -->
+<!-- preventDefault() is required to allow dropping. -->
+<script>
+    dragZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        console.log("dragover; Dragging over drop zone!");
+    });
+</script>
+
+<!-- 7) drop: Triggered when the dragged element is dropped on a valid target. -->
+<script>
+    dragZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        console.log("drop; Element dropped!");
+    });
+</script>
+
+<!-- TOUCH EVENTS (For Mobile) -->
+
+<!-- 1) touchstart: Triggered when a finger touches the screen. -->
+<script>
+    touchBox.addEventListener("touchstart", () => {
+        console.log("touchstart; Touch started!");
+    });
+</script>
+
+<!-- 2) touchmove: Triggered when a finger moves on the screen. -->
+<script>
+    touchBox.addEventListener("touchmove", () => {
+        console.log("touchmove; Touch moving!");
+    });
+</script>
+
+<!-- 3) touchend: Triggered when a finger is lifted from the screen. -->
+<script>
+    touchBox.addEventListener("touchend", () => {
+        console.log("touchend; Touch ended!");
+    });
+</script>
+
+<!-- 4) touchcancel: Triggered when the touch is interrupted or canceled. -->
+<script>
+    touchBox.addEventListener("touchcancel", () => {
+        console.log("touchcancel; Touch canceled!");
+    });
+</script>
+
+<!-- MEDIA EVENTS -->
+
+<!-- 1) play: Triggered when the media starts palying. -->
+<script>
+    demoVideo.addEventListener("play", () => {
+        console.log("Video playing!");
+    });
+</script>
+
+<!-- 2) pause: Triggered when the media is paused. -->
+<script>
+    demoVideo.addEventListener("pause", () => {
+        console.log("pause; Video paused!");
+    });
+</script>
+
+<!-- 3) ended: Triggered when the media reaches the end. -->
+<script>
+    demoVideo.addEventListener("ended", () => {
+        console.log("ended; Video ended!");
+    });
+</script>
+
+<!-- 4) timeupdate: Triggered when the current playback time changes. -->
+<script>
+    demoVideo.addEventListener("timeupdate", () => {
+        console.log("timeupdate; Current time: ", demoVideo.currentTime);
+    });
+</script>
+
+<!-- 5) volumechange: Triggered when the volume level or mute state changes. -->
+<script>
+    demoVideo.addEventListener("volumechange", () => {
+        console.log("volumechange; Volume changed: ", demoVideo.volume);
+    });
+</script>
+
+<!-- 6) loadeddata: Triggered when the current frame is loaded and media can start playing. -->
+<script>
+    demoVideo.addEventListener("loadeddata", () => {
+        console.log("loadeddata; Media data loaded!");
+    });
+</script>
+
+<!-- 7) loadedmetadata: Triggered when metadata (duration, dimensions) is available. -->
+<script>
+    demoVideo.addEventListener("loadedmetadata", () => {
+        console.log("loadedmetadata; Duration: ", demoVideo.duration);
+    });
+</script>
+
+<!-- ANIMATION EVENTS -->
+
+<!-- 1) animationstart: Triggered when a CSS animation starts. -->
+<script>
+    animateBox.addEventListener("animationstart", () => {
+        console.log("animationstart; Animation started!");
+    });
+</script>
+
+<!-- 2) animationiteration: Triggered each time the animation repeats (loops). -->
+<script>
+    animateBox.addEventListener("animationiteration", () => {
+        console.log("animationiteration; Animation repeated!");
+    });
+</script>
+
+<!-- 3) animationend: Triggered when the animation finishes completely. -->
+<script>
+    animateBox.addEventListener("animationend", () => {
+        console.log("animationend; Animation ended!");
+    });
+</script>
+
+<!-- TRANSITION EVENTS -->
+
+<!-- 1) transitionstart: Triggered when a transition begins. -->
+<script>
+    transitionBox.addEventListener("transitionstart", () => {
+        console.log("transitionstart; Transition started!");
+    });
+</script>
+
+<!-- 2) transitionrun: Triggered when the transition is running (including re-starts). -->
+<script>
+    transitionBox.addEventListener("transitionrun", () => {
+        console.log("transitionrun; Transition running!");
+    });
+</script>
+
+<!-- 3) transitionend: Triggered when the transition completes succssfully. -->
+<script>
+    transitionBox.addEventListener("transitionend", () => {
+        console.log("transitionend; Transition ended!");
+    });
+</script>
+
+<!-- 4) transitioncancel: Triggered when the transition is interrupted before completion. -->
+<script>
+    transitionBox.addEventListener("transitioncancel", () => {
+        console.log("transitioncancel; Transition cancelled!");
+    });
+</script>
+
+<!-- POINTER EVENTS -->
+
+<!-- 1) pointerdown: Triggered when a pointer (mouse, touch, pen) is pressed down. -->
+<script>
+    pointerBox.addEventListener("pointerdown", () => {
+        console.log("pointrdown; Pointer pressed!");
+    });
+</script>
+
+<!-- 2) pointerup: Triggered when a pointer is released. -->
+<script>
+    pointerBox.addEventListener("pointerup", () => {
+        console.log("pointerup; Pointer released!");
+    });
+</script>
+
+<!-- 3) pointermove: Triggered when a pointer moves across the element. -->
+<script>
+    pointerBox.addEventListener("pointermove", () => {
+        console.log("pointermove; Pointer moving!");
+    });
+</script>
+
+<!-- EVENT OBJECTS & EVENT PROPERTIES -->
+
+<!-- Whenever an event occurs, the browser creates an event object and passes it to the event handler. This object contains information about the event and methods to control its behaviour. -->
+
+<!-- Why is it useful? -->
+<!-- Identify the event type (click, keydown, input, etc). -->
+<!-- Access the target element that triggered the event. -->
+<!-- Prevent default behaviour (e.g, stop from submission, disable right-click). -->
+<!-- Stop propagation (control event flow). -->
+<!-- Get additional info like mouse position, key pressed, or clipboard data. -->
+
+<!-- Common Properties -->
+<!-- 1) type: Type of the event (e.g: click, keydown, etc). -->
+<!-- 2) target: The element that triggered the event. -->
+<!-- 3) currentTarget: The element the event listener is attached to. -->
+<!-- 4) bubbles: Boolean indicated if the event bubbles up through the DOM. -->
+<!-- 5) cancelable: Boolean indicating if the event's default action can be prevented. -->
+<!-- 6) defaultPrevented: Boolean indicating if preventDefault() has been called. -->
+<!-- 7) eventPhase: Current phase of event propagation (capturing, target, bubbling). -->
+<!-- 8) .isTrusted: Boolean indicating if the event was initiated by the user. -->
+<!-- 9) timeStamp: Timestamp of when the event occured. -->
+
+<!-- EVENT FLOW -->
+<!-- It describes how event travel through the DOM when triggered. -->
+
+<script>
+    const parentDiv = document.getElementById("parentDiv");
+    const childDiv = document.getElementById("childDiv");
+    const childBtn = document.getElementById("childBtn");
+
+    // 1) Capturing Phase: The event travels from the outermost element down to the target element.
+    parentDiv.addEventListener("click", () => {
+        console.log("Parent Div (capturing)");
+    }, true);
+
+    // 2) Target Phase: The event reaches the element that actually triggered it.
+    childBtn.addEventListener("click", (e) => {
+        console.log("Button clicked (target phase)");
+    });
+
+    // 3) Bubbling Phase: The event travels from the target element back up to the outer ancestors.
+    parentDiv.addEventListener("click", () => {
+        console.log("Parent Div (bubbling)");
+    });
+
+    // Event Delegation: A technique where a parent element handles events for its child elements using bubbling.
+    parentDiv.addEventListener("click", (e) => {
+        if(e.target.tagName === "BUTTON"){
+            console.log("Delegation: Button clicked via parent!");
+        }
+    });
+</script>
