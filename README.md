@@ -137,3 +137,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Pointer Events: `pointerdown`, `pointerup`, `pointermove`.
 - Event Objects and Event Properties.
 - Event Flow: Capturing Phase, Target Phase, Bubbling Phase & Event Delegation.
+
+**18. BROWSER OBJECT MODEL (BOM):**
+- Window Objects: `window.open()`, `window.close()`, `resizeTo()`, `resizeBy`, `scrollTo()`, `scrollBy()`.
+- Browser & Screen Properties: `innerWidth`, `innerHeight`, `outerWidth`, `outerHeight`, `screenX`, `screenY`.
+- Mouse Positions: `offsetX`, `offsetY`, `clientX`, `clientY`, `pageX`, `pageY`.
+- Location Objects: `location.href`, `location.reload()`, `location.replace()`.
+- History Objects: `history.back()`, `history.forward()`, `history.go()`.
+- Navigator Objects: Browser info, Device info, `navigator.geolocation`.
