@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Browser Object Model </title>
+</head>
+<body>
+
+    <!-- WINDOW OBJECTS -->
+    <div class="container">
+        <h2> Window Objects </h2>
+        <p> Window methods like open, close, resize, and scroll will be handled by JavaScript. </p>
+        <button id="openBtn"> Open Window </button>
+        <button id="closeBtn"> Close Window </button>
+        <button id="resizeToBtn"> Resize To </button>
+        <button id="resizeByBtn"> Resize By </button>
+        <button id="scrollToBtn"> Scroll To </button>
+        <button id="scrollByBtn"> Scroll By </button>
+    </div>
+
+    <!-- BROWSER & SCREEN PROPERTIES -->
+    <div class="container">
+        <h2> Browser & Screen Properties </h2>
+        <p> Values like innerWidth, innerHeight, outerWidth, outerHeight, screenX, screenY will be handled by using JavaScript. </p>
+        <button id="innerWidthBtn"> Check Inner Width </button>
+        <button id="innerHeightBtn"> Check Inner Height </button>
+        <button id="outerWidthBtn"> Check Outer Width </button>
+        <button id="outerHeightBtn"> Check Outer Height </button>
+        <button id="screenXBtn"> Check Screen X </button>
+        <button id="screenYBtn"> Check Screen Y </button>
+    </div>
+
+    <!-- MOUSE POSITIONS -->
+    <div class="container">
+        <h2> Mouse Positions </h2>
+        <button id="offsetXBtn"> Check Offset X </button>
+        <button id="offsetYBtn"> Check Offset Y </button>
+        <button id="clientXBtn"> Check Client X </button>
+        <button id="clientYBtn"> Check Client Y </button>
+    </div>
+
+    <!-- LOCATION OBJECTS -->
+    <div class="container">
+        <h2> Location Object </h2>
+        <p> Current URL and navigation functions will be controlled using JavaScript. </p>
+        <button id="hrefBtn"> Check Current URL </button>
+        <button id="reloadBtn"> Reload Page </button>
+        <button id="replaceBtn"> Go To Another Page </button>
+    </div>
+
+    <!-- HISTORY OBJECTS -->
+    <div class="container">
+        <h2> History Object </h2>
+        <p> Navigation through browser history will be handled using JavaScript. </p>
+        <p> Will not work temporarily, due to no history. </p>
+        <button id="backBtn"> Back </button>
+        <button id="forwardBtn"> Forward </button>
+        <button id="goBtn"> Go (Custom Step) </button>
+    </div>
+
+    <!-- NAVIGATOR OBJECT -->
+    <div class="container">
+        <h2> Navigator Object </h2>
+        <p> Browser info and geolocation will be handled using JavaScript. </p>
+        <button id="browserInfoBtn"> Show Browser Info </button>
+        <button id="deviceInfoBtn"> Show Device Info </button>
+        <button id="geoBtn"> Get Location </button>
+        <p id="geoStatus"></p>
+    </div>
+    
+</body>
+</html>
+
+<!-- WINDOW OBJECTS -->
+
+<!-- 1) window.open(): Opens a new browser tab or popup window. -->
+<script>
+    let newWin;
+
+    document.getElementById("openBtn").addEventListener("click", function(){
+        newWin = window.open("https://example.com", "_blank", "width = 500, height = 400");
+        console.log("window.open(); Window Opened:", newWin);
+    });
+</script>
+
+<!-- 2) window.close(): Closes a window that your script opened. -->
+<script>
+    document.getElementById("closeBtn").addEventListener("click", function(){
+        if(newWin){
+            newWin.close();
+            console.log("window.close(); Window Closed!");
+        }
+        else{
+            console.log("No window to close!");
+        }
+    });
+</script>
+
+<!-- 3) resizeTo(width, height): Resizes the browser window to an exact size. -->
+<!-- Older popup layouts. Rarely used today, restricted by most browsers. -->
+<script>
+    document.getElementById("resizeToBtn").addEventListener("click", function(){
+        window.resizeTo(800, 600);
+        console.log("resizeTo(); Window resized to 800 x 600!");
+    });
+</script>
+
+<!-- 4) resizeBy(x, y): Resizes the window relative to current size. -->
+<script>
+    document.getElementById("resizeByBtn").addEventListener("click", function(){
+        window.resizeBy(-100, -50);
+        console.log("resizeBy(); Window resized by -100 width and -50 height!");
+    });
+</script>
+
+<!-- 5) scrollTo(x, y): Scrolls the page to an exact position. -->
+<script>
+    document.getElementById("scrollToBtn").addEventListener("click", function(){
+        window.scrollTo(100, 100);
+        console.log("scrollTo(); Page scrolled to +100 width and +100 height!");
+    });
+</script>
+
+<!-- 6) scrollBy(x, y): Scrolls the page relative to current position. -->
+<script>
+    document.getElementById("scrollByBtn").addEventListener("click", function(){
+        window.scrollBy(0, 300);
+        console.log("scrollBy(); Scrolled down by 300px!");
+    });
+</script>
+
+<!-- BROWSER & SCREEN PROPERTIES -->
+
+<!-- 1) innerWidth: It is a width of viewport. Checks if screen is small -> switch to mobile layout. -->
+<script>
+    document.getElementById("innerWidthBtn").addEventListener("click", function(){
+        console.log("innerWidth; Inner Width is: ", window.innerWidth);
+    });
+</script>
+
+<!-- 2) innerHeight: It is a height of viewport. Detect when content may overflow vertically. -->
+<script>
+    document.getElementById("innerHeightBtn").addEventListener("click", function(){
+        console.log("innerHeight; Inner Height is: ", window.innerHeight);
+    });
+</script>
+
+<!-- 3) outerWidth: It is a full width of the browser window. (viewport + toolbars + borders). -->
+<script>
+    document.getElementById("outerWidthBtn").addEventListener("click", function(){
+        console.log("outerWidth; Outer Width is: ", window.outerWidth);
+    });
+</script>
+
+<!-- 4) outerHeight: It is a full height of the browser window. -->
+<script>
+    document.getElementById("outerHeightBtn").addEventListener("click", function(){
+        console.log("outerHeight; Outer Height is: ", window.outerHeight);
+    });
+</script>
+
+<!-- 5) screenX: It is a x-position of the window relative to your screen (from left). -->
+<script>
+    document.getElementById("screenXBtn").addEventListener("click", function(){
+        console.log("screenX; X-position of screen is: ", window.screenX);
+    });
+</script>
+
+<!-- 6) screenY: It is a y-position of the window relative to your screen (from top). -->
+<script>
+    document.getElementById("screenYBtn").addEventListener("click", function(){
+        console.log("screenY; Y-position of screen is:", window.screenY);
+    });
+</script>
+
+<!-- MOUSE POSITIONS -->
+
+<!-- 1) offsetX: It gives the mouse x-position inside the element you are interacting with, measured from element's top-left corner. -->
+<script>
+    document.getElementById("offsetXBtn").addEventListener("click", function(e){
+        console.log("offsetX; X-position of mouse is: ", e.offsetX);
+    });
+</script>
+
+<!-- 2) offsetY: It gives the mouse y-position inside the element you are interacting with, measured from element's top-left corner. -->
+<script>
+    document.getElementById("offsetYBtn").addEventListener("click", function(e){
+        console.log("offsetY; Y-position of mouse is: ", e.offsetY);
+    });
+</script>
+
+<!-- 3) clientX: It gives the mouse x-position inside the visible browser area (viewport). -->
+<script>
+    document.getElementById("clientXBtn").addEventListener("click", function(e){
+        console.log("clientX; X-position of mouse is: ", e.clientX);
+    });
+</script>
+
+<!-- 4) clientY: It gives the mouse y-position inside the visible browser area (viewport). -->
+<script>
+    document.getElementById("clientYBtn").addEventListener("click", function(e){
+        console.log("clientY; Y-position of mouse is: ", e.clientY);
+    });
+</script>
+
+<!-- 5) pageX: It gives the mouse x-position relative to the entire document, including scrolling. -->
+<script>
+    document.addEventListener("dblclick", function(e){
+        console.log("clientX: ", e.clientX);
+        console.log("pageX; X-position of mouse (including scrolling) is: ", e.pageX);
+    });
+</script>
+
+<!-- 6) pageY: It gives the mouse y-position relative to the entire document, including scrolling. -->
+<script>
+    document.addEventListener("dblclick", function (e) {
+        console.log("clientY: ", e.clientY);
+        console.log("pageY; Y-position of mouse (including scrolling) is: ", e.pageY);
+    });
+</script>
+
+<!-- LOCATION OBJECTS -->
+
+<!-- 1) location.href: Returns the full URL of the current page. We can also assign a new value to navigate to another page. -->
+<script>
+    document.getElementById("hrefBtn").addEventListener("click", function(){
+        console.log("location.href; Current URL is: ", location.href);
+    });
+</script>
+
+<!-- 2) location.reload(): Reloads the current page. -->
+<script>
+    document.getElementById("reloadBtn").addEventListener("click", function(){
+        console.log("location.reload(); Current Page is reloaded!", location.reload());
+    });
+</script>
+
+<!-- 3) location.replace(): Navigates to another page, but does not keep the current page in history. -->
+<script>
+    document.getElementById("replaceBtn").addEventListener("click", function(){
+        console.log("location.replace(); Navigating to another page!");
+        location.replace("https://www.google.com");
+    });
+</script>
+
+<!-- HISTORY OBJECTS (Will only work with history, if you already moved to another page). -->
+
+<!-- 1) history.back(): Takes the user to the previous page (same as clicking th browser's back button). -->
+<script>
+    document.getElementById("backBtn").addEventListener("click", function(){
+        console.log("history.back(); Going back!");
+        history.back();
+    });
+</script>
+
+<!-- 2) history.forward(): Takes the user forward (if they previously went back). -->
+<script>
+    document.getElementById("forwardBtn").addEventListener("click", function(){
+        console.log("history.forward(); Going forward!");
+        history.forward();
+    });
+</script>
+
+<!-- 3) history.go(): Moves to a specific step in browser history. -->
+<!-- history.go(-1): one step back; history.go(1): one step forward; history.go(-2): two pages back -->
+<script>
+    document.getElementById("goBtn").addEventListener("click", function(){
+        console.log("Going one step forward!");
+        history.go(1);
+    });
+</script>
+
+<!-- NAVIGATOR OBJECT -->
+
+<!-- 1) Browser Info: Provides information about the browser, the user is using. -->
+<script>
+    document.getElementById("browserInfoBtn").addEventListener("click", function(){
+        console.log("Browser Info: ");
+        console.log("User Agent: ", navigator.userAgent);
+        console.log("Language: ", navigator.language);
+        console.log("Online Status: ", navigator.onLine);
+    });
+</script>
+
+<!-- 2) Device Info: Gives information about device capabilities, not personal identity. -->
+<script>
+    document.getElementById("deviceInfoBtn").addEventListener("click", function(){
+        console.log("Device Info: ");
+        console.log("Platform: ", navigator.platform);
+        console.log("CPU Cores: ", navigator.hardwareConcurrency);
+        console.log("Approx Device Memory (GB): ", navigator.deviceMemory);
+    });
+</script>
+
+<!-- 3) navigator.geolocation: Get the user's current location (latitude + longitude), but only: -->
+<!-- If the user allows permission, will NOT work on insecure sites (needs HTTPS, except localhost). -->
+<script>
+    document.getElementById("geoBtn").addEventListener("click", function(){
+        document.getElementById("geoStatus").textContent = "Requesting location...";
+        if(!navigator.geolocation){
+            console.log("Geolocation is NOT supported in this browser");
+            document.getElementById("geoStatus").textContent = "Geolocation not supported!";
+            return;
+        }
+        navigator.geolocation.getCurrentPosition(
+            function(position){
+                console.log("Geolocation Success!");
+                console.log("Latitude: ", position.coords.latitude);
+                console.log("Longitude: ", position.coords.longitude);
+                document.getElementById("geoStatus").textContent = "Location received (check console)!";
+            },
+            function(error){
+                console.log("Geolocation Error: ", error.message);
+                document.getElementById("geoStatus").textContent = "Location permission denied or failed!"
+            }
+        );
+    });
+</script>
