@@ -145,3 +145,14 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Location Objects: `location.href`, `location.reload()`, `location.replace()`.
 - History Objects: `history.back()`, `history.forward()`, `history.go()`.
 - Navigator Objects: Browser info, Device info, `navigator.geolocation`.
+
+**19. CLASSES & OOP:**
+- What is OOP?
+- Class Declaration.
+- Constructor.
+- Methods.
+- Inheritance (`extends`,`super`).
+- Getters & Setters.
+- Static Methods.
+- Encapsulation.
+- Polymorphism.
