@@ -156,3 +156,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Static Methods.
 - Encapsulation.
 - Polymorphism.
+
+**20. ASYNCHRONOUS JAVASCRIPT:**
+- Callback.
+- Callback Hell.
+- Promises (`then()`, `catch()`).
+- `async` & `await`.
+- Promise Chaining.
+- Error Handling.
