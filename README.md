@@ -164,3 +164,7 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - `async` & `await`.
 - Promise Chaining.
 - Error Handling.
+
+**21. ERROR HANDLING:**
+- `try...catch`.
+- `finally`.
