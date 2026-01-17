@@ -168,3 +168,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 **21. ERROR HANDLING:**
 - `try...catch`.
 - `finally`.
+
+**22. AJAX & API CALLS:**
+- `XMLHttpRequest` (basic).
+- `fetch()` Method.
+- Working with JSON.
+- GET & POST Requests.
+- Handling Errors in `fetch()`.
+- Using Public APIs.
