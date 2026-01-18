@@ -176,3 +176,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - GET & POST Requests.
 - Handling Errors in `fetch()`.
 - Using Public APIs.
+
+**23. REGULAR EXPRESSIONS (REGEX):**
+- Regex Literals.
+- Regex Methods: `test()`, `match()`, `replace()`.
+- Character Classes.
+- Quantifiers.
+- Anchors (`^`, `$`).
+- Regex Flags (`g`, `i`, `m`).
