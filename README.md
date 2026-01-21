@@ -184,3 +184,8 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Quantifiers.
 - Anchors (`^`, `$`).
 - Regex Flags (`g`, `i`, `m`).
+
+**24. STORAGE:**
+- Local Storage.
+- Session Storage.
+- Cookies (basics).
