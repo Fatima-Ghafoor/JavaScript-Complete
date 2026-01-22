@@ -189,3 +189,11 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Local Storage.
 - Session Storage.
 - Cookies (basics).
+
+**25. MODULES & ADVANCED CONCEPTS:**
+- ES Modules (`import`, `export`).
+- Named vs Default Exports.
+- Closures.
+- Higher-Order Functions.
+- Debouncing (basic).
+- Throttling (basic).
