@@ -197,3 +197,10 @@ All topics are organized step by step, without mixing concepts, for clear learni
 - Higher-Order Functions.
 - Debouncing (basic).
 - Throttling (basic).
+
+**26. DATA STRUCTURES:**
+- Stack.
+- Queue.
+- Linked List.
+- HashMap (using objects).
+- Sets & Maps.
